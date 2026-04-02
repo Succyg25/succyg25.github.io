@@ -4,160 +4,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Succy-Creations</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
+    <meta name="description" content="Contact Succy-Creations — Start your project, ask a question, or just say hello.">
+    <title>Contact | Succy-Creations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1', secondary: '#06b6d4', accent: '#a855f7',
+                        dark: { 900: '#060612', 800: '#0a0a18', 700: '#0f0f23', 600: '#141430' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark-900 text-slate-200">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SUCCY<span>-CREATIONS</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                </ul>
+    <nav id="mainNav">
+        <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">SUCCY<span>-CREATIONS</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="about.html" class="nav-link-custom">About</a>
+                <a href="services.html" class="nav-link-custom">Services</a>
+                <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+                <a href="contact.html" class="btn-glow text-sm px-5 py-2.5" style="border-radius:10px">Let's Talk</a>
             </div>
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white transition-colors">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header reveal">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4">Get in Touch</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                </ol>
-            </nav>
+    <!-- Mobile menu -->
+    <div id="mobileMenu">
+        <button id="menuClose" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+            <i class="bi bi-x-lg text-2xl"></i>
+        </button>
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+        <a href="contact.html" class="btn-glow">Let's Talk</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero text-center">
+        <div class="hero-orb w-72 h-72 bg-indigo-600/20" style="top:10%;left:-5%;animation-delay:0s"></div>
+        <div class="hero-orb w-56 h-56 bg-cyan-500/15" style="top:0;right:10%;animation-delay:4s"></div>
+        <div class="max-w-3xl mx-auto px-5 relative z-10">
+            <span class="section-label mb-5 block justify-center reveal-hidden">Get In Touch</span>
+            <h1 class="text-5xl lg:text-6xl font-bold mb-5 reveal-hidden stagger-1"
+                style="font-family:'Space Grotesk',sans-serif;line-height:1.1">
+                Let's build something <span class="gradient-text">great.</span>
+            </h1>
+            <p class="text-slate-400 text-lg reveal-hidden stagger-2">
+                Have a project in mind? We'd love to hear from you. Drop us a message and we'll get back within 24
+                hours.
+            </p>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Contact Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row reveal">
-                <div class="col-lg-12">
-                    <div class="glass-card p-5 p-lg-10">
-                        <div class="row g-5">
-                            <div class="col-lg-5">
-                                <h2 class="display-5 fw-bold mb-4">Let's talk about your <span
-                                        class="text-gradient">vision</span>.</h2>
-                                <p class="mb-5 text-muted lead">We're always looking for new challenges and bold ideas.
-                                    Drop us a line and let's start something meaningful.</p>
+    <hr class="gradient-divider">
 
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="service-icon me-4" style="width: 50px; height: 50px;">
-                                        <i class="bi bi-geo-alt fs-5"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Studio Location</h6>
-                                        <span class="text-muted small">Lagos, Nigeria — 2026 Headquarters</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="service-icon me-4" style="width: 50px; height: 50px;">
-                                        <i class="bi bi-envelope-at fs-5"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">General Inquiry</h6>
-                                        <span class="text-muted small">succygsmedia@gmail.com</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="service-icon me-4" style="width: 50px; height: 50px;">
-                                        <i class="bi bi-phone fs-5"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Direct Line</h6>
-                                        <span class="text-muted small">+234 707 212 3968</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <form id="contactForm" class="p-4 p-md-5 bg-surface rounded-4 border border-glass">
-                                    <div class="row g-4">
-                                        <div class="col-md-6">
-                                            <label class="form-label small text-uppercase fw-bold letter-spacing-1">Full
-                                                Name</label>
-                                            <input type="text" class="form-control" placeholder="Jane Doe" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label
-                                                class="form-label small text-uppercase fw-bold letter-spacing-1">Email
-                                                Address</label>
-                                            <input type="email" class="form-control" placeholder="jane@example.com"
-                                                required>
-                                        </div>
-                                        <div class="col-12">
-                                            <label
-                                                class="form-label small text-uppercase fw-bold letter-spacing-1">Subject</label>
-                                            <select class="form-control form-select">
-                                                <option selected disabled>Choose a service...</option>
-                                                <option>Web Redesign</option>
-                                                <option>Mobile App</option>
-                                                <option>Brand Identity</option>
-                                                <option>SEO Strategy</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label
-                                                class="form-label small text-uppercase fw-bold letter-spacing-1">Project
-                                                Details</label>
-                                            <textarea class="form-control" rows="5"
-                                                placeholder="Tell us about your project goals..." required></textarea>
-                                        </div>
-                                        <div class="col-12 mt-4">
-                                            <button type="submit" class="btn btn-primary w-100 py-3">Ignite
-                                                Conversation</button>
-                                        </div>
-                                    </div>
-                                </form>
+    <!-- Contact Section -->
+    <section class="py-28">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid lg:grid-cols-5 gap-12 items-start">
+
+                <!-- Left: Info -->
+                <div class="lg:col-span-2 reveal-hidden reveal-left">
+                    <h2 class="text-3xl font-bold mb-3" style="font-family:'Space Grotesk',sans-serif">Contact Info</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-10">
+                        We're a friendly, responsive team. Whether you're starting a new project or need expert advice,
+                        we're just a message away.
+                    </p>
+
+                    <!-- Info items -->
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="contact-icon-box"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-0.5"
+                                    style="font-family:'Space Grotesk',sans-serif">Location</h4>
+                                <p class="text-slate-400 text-sm">Lagos, Nigeria</p>
                             </div>
                         </div>
+                        <div class="gradient-divider"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="contact-icon-box"
+                                style="background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:var(--secondary)">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-0.5"
+                                    style="font-family:'Space Grotesk',sans-serif">Email Us</h4>
+                                <a href="mailto:hello@succycreations.com"
+                                    class="text-slate-400 text-sm hover:text-cyan-400 transition-colors">hello@succycreations.com</a>
+                            </div>
+                        </div>
+                        <div class="gradient-divider"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="contact-icon-box"
+                                style="background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.2);color:var(--accent)">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-0.5"
+                                    style="font-family:'Space Grotesk',sans-serif">Call Us</h4>
+                                <a href="tel:+2348001234567"
+                                    class="text-slate-400 text-sm hover:text-purple-400 transition-colors">+234 800 123
+                                    4567</a>
+                            </div>
+                        </div>
+                        <div class="gradient-divider"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="contact-icon-box"><i class="bi bi-clock"></i></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-0.5"
+                                    style="font-family:'Space Grotesk',sans-serif">Working Hours</h4>
+                                <p class="text-slate-400 text-sm">Monday – Friday, 9am – 6pm WAT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social links -->
+                    <div>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest mb-4">Follow Us</p>
+                        <div class="flex gap-3">
+                            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-3 reveal-hidden reveal-right">
+                    <div class="glass-strong rounded-3xl p-8 md:p-10">
+                        <h3 class="text-2xl font-bold mb-2 text-white" style="font-family:'Space Grotesk',sans-serif">
+                            Send a Message</h3>
+                        <p class="text-slate-500 text-sm mb-8">Fill out the form below and we'll get back to you
+                            shortly.</p>
+
+                        <form id="contactForm" novalidate>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label
+                                        class="block text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Full
+                                        Name</label>
+                                    <input id="contactName" type="text" class="form-field" placeholder="John Doe"
+                                        required>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Email
+                                        Address</label>
+                                    <input id="contactEmail" type="email" class="form-field"
+                                        placeholder="john@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label
+                                    class="block text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Subject</label>
+                                <input id="contactSubject" type="text" class="form-field"
+                                    placeholder="What can we help you with?">
+                            </div>
+
+                            <div class="mb-4">
+                                <label
+                                    class="block text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Service
+                                    Interested In</label>
+                                <select id="contactService" class="form-field" style="cursor:pointer">
+                                    <option value="" style="background:#0f0f23">Select a service…</option>
+                                    <option value="web" style="background:#0f0f23">Web Design &amp; Development</option>
+                                    <option value="branding" style="background:#0f0f23">Branding &amp; Identity</option>
+                                    <option value="marketing" style="background:#0f0f23">Digital Marketing</option>
+                                    <option value="ui" style="background:#0f0f23">UI/UX Design</option>
+                                    <option value="other" style="background:#0f0f23">Other / General Enquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-8">
+                                <label
+                                    class="block text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Your
+                                    Message</label>
+                                <textarea id="contactMessage" class="form-field" rows="5"
+                                    placeholder="Tell us about your project, timeline, budget…" required></textarea>
+                            </div>
+
+                            <button type="submit" id="contactBtn" class="btn-glow w-full py-4 text-base justify-center">
+                                <i class="bi bi-send"></i> Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <a class="navbar-brand mb-3 d-inline-block" href="#">SUCCY<span>-CREATIONS</span></a>
-                    <p class="text-muted mb-0 small">&copy; 2026 Succy-Creations. Crafted for excellence.</p>
+    <!-- FAQ Section -->
+    <section class="py-24" style="background:var(--dark-800)">
+        <div class="max-w-3xl mx-auto px-5">
+            <div class="text-center mb-14 reveal-hidden">
+                <span class="section-label mb-4 block justify-center">FAQ</span>
+                <h2 class="text-4xl font-bold" style="font-family:'Space Grotesk',sans-serif">
+                    Common <span class="gradient-text">Questions</span>
+                </h2>
+            </div>
+            <div class="space-y-4">
+                <div class="process-card reveal-hidden stagger-1">
+                    <h4 class="text-white font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif">
+                        <i class="bi bi-question-circle text-indigo-400 mr-2"></i>How long does a typical project take?
+                    </h4>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-6">It depends on the scope. A landing page can
+                        take 1–2 weeks, while a full brand identity or complex web app can take 4–8 weeks. We'll give
+                        you a clear timeline during our discovery call.</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-dribbble"></i></a>
+                <div class="process-card reveal-hidden stagger-2">
+                    <h4 class="text-white font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif">
+                        <i class="bi bi-question-circle text-indigo-400 mr-2"></i>What does a project cost?
+                    </h4>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-6">Every project is unique. We offer custom
+                        quotes based on your specific requirements, timeline, and deliverables. Reach out via the form
+                        and we'll discuss over a free consultation.</p>
+                </div>
+                <div class="process-card reveal-hidden stagger-3">
+                    <h4 class="text-white font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif">
+                        <i class="bi bi-question-circle text-indigo-400 mr-2"></i>Do you work with international
+                        clients?
+                    </h4>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-6">Absolutely. We work with clients across
+                        Africa, Europe, and North America. Remote collaboration is seamless — we use video calls, shared
+                        project boards, and async communication effectively.</p>
+                </div>
+                <div class="process-card reveal-hidden stagger-4">
+                    <h4 class="text-white font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif">
+                        <i class="bi bi-question-circle text-indigo-400 mr-2"></i>Will I own the final files and
+                        designs?
+                    </h4>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-6">Yes. Upon full payment, you receive complete
+                        ownership of all design assets, source files, and any code we produce for your project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/5" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="nav-logo block mb-4">SUCCY<span>-CREATIONS</span></a>
+                    <p class="text-slate-500 text-sm leading-relaxed">Premium digital design studio based in Lagos,
+                        Nigeria.</p>
+                    <div class="flex gap-2 mt-5">
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-behance"></i></a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="footer-link">Web Design</a></li>
+                        <li><a href="services.html" class="footer-link">Branding</a></li>
+                        <li><a href="services.html" class="footer-link">Marketing</a></li>
+                        <li><a href="services.html" class="footer-link">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Contact</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-indigo-400 mt-0.5"></i>Lagos,
+                            Nigeria</li>
+                        <li class="flex items-start gap-2"><i
+                                class="bi bi-envelope text-indigo-400 mt-0.5"></i>hello@succycreations.com</li>
+                        <li class="flex items-start gap-2"><i class="bi bi-telephone text-indigo-400 mt-0.5"></i>+234
+                            800 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gradient-divider mb-6"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-slate-600 text-sm">
+                <p>&copy; 2026 Succy-Creations. All rights reserved.</p>
+                <p>Crafted with <i class="bi bi-heart-fill text-indigo-500 text-xs"></i> &amp; precision.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 

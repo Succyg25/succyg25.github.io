@@ -4,176 +4,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Succy-Creations | Premium Digital Studio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
+    <meta name="description"
+        content="Succy-Creations — Premium design studio crafting bespoke web experiences, brand identities, and digital growth strategies.">
+    <title>Succy-Creations | Premium Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1', secondary: '#06b6d4', accent: '#a855f7',
+                        dark: { 900: '#060612', 800: '#0a0a18', 700: '#0f0f23', 600: '#141430' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark-900 text-slate-200">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SUCCY<span>-CREATIONS</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
+    <nav id="mainNav">
+        <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">SUCCY<span>-CREATIONS</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="about.html" class="nav-link-custom">About</a>
+                <a href="services.html" class="nav-link-custom">Services</a>
+                <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+                <a href="contact.html" class="btn-glow text-sm px-5 py-2.5" style="border-radius:10px">Let's Talk</a>
             </div>
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white transition-colors">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container hero-content text-center reveal">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h1 class="display-3 fw-bold mb-4">We shape the <span class="text-gradient">future</span> of digital
-                        experiences</h1>
-                    <p class="lead mb-5 text-muted mx-auto" style="max-width: 700px;">Bespoke strategies, immersive
-                        designs, and high-performance development for brands that want to lead.</p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="portfolio.html" class="btn btn-primary">Our Showcase</a>
-                        <a href="contact.html" class="btn btn-outline-light">Start a Project</a>
-                    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu">
+        <button id="menuClose" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+            <i class="bi bi-x-lg text-2xl"></i>
+        </button>
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+        <a href="contact.html" class="btn-glow">Let's Talk</a>
+    </div>
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section hero-grid">
+        <canvas id="heroCanvas" class="absolute inset-0 pointer-events-none"></canvas>
+        <!-- Orbs -->
+        <div class="hero-orb w-80 h-80 bg-indigo-600/25" style="top:15%;left:-8%;animation-delay:0s"></div>
+        <div class="hero-orb w-64 h-64 bg-cyan-500/20" style="bottom:20%;right:5%;animation-delay:3s"></div>
+        <div class="hero-orb w-72 h-72 bg-purple-600/15" style="top:5%;right:25%;animation-delay:6s"></div>
+
+        <div class="max-w-6xl mx-auto px-5 text-center relative z-10 pt-24">
+            <div class="reveal-hidden mb-5">
+                <span class="section-label">Lagos, Nigeria · Design Studio</span>
+            </div>
+
+            <h1 class="hero-heading reveal-hidden stagger-1 font-bold leading-tight mb-6"
+                style="font-size:clamp(2.6rem,7vw,5.5rem);font-family:'Space Grotesk',sans-serif">
+                We craft<br>
+                <span class="gradient-text" id="heroTypewriter">Web Experiences</span><span
+                    class="typewriter-cursor"></span><br>
+                that <em style="font-style:normal;color:#e2e8f0">matter.</em>
+            </h1>
+
+            <p class="reveal-hidden stagger-2 text-slate-400 max-w-lg mx-auto mb-10"
+                style="font-size:1.1rem;line-height:1.75">
+                Bespoke digital creations crafted with precision, passion, and a relentless pursuit of excellence.
+            </p>
+
+            <div class="reveal-hidden stagger-3 flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <a href="portfolio.html" class="btn-glow">
+                    <i class="bi bi-arrow-up-right"></i> View Our Work
+                </a>
+                <a href="contact.html" class="btn-ghost">Start a Project</a>
+            </div>
+
+            <!-- Micro stats -->
+            <div class="reveal-hidden stagger-4 flex flex-wrap justify-center gap-8 text-center">
+                <div class="stat-item">
+                    <div class="stat-number text-3xl" data-counter="50" data-suffix="+">50+</div>
+                    <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Projects Done</div>
+                </div>
+                <div class="w-px bg-white/10 hidden sm:block"></div>
+                <div class="stat-item">
+                    <div class="stat-number text-3xl" data-counter="30" data-suffix="+">30+</div>
+                    <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Happy Clients</div>
+                </div>
+                <div class="w-px bg-white/10 hidden sm:block"></div>
+                <div class="stat-item">
+                    <div class="stat-number text-3xl" data-counter="5" data-suffix="+">5+</div>
+                    <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Years Active</div>
+                </div>
+                <div class="w-px bg-white/10 hidden sm:block"></div>
+                <div class="stat-item">
+                    <div class="stat-number text-3xl" data-counter="100" data-suffix="%">100%</div>
+                    <div class="text-slate-500 text-xs mt-1 uppercase tracking-widest">Satisfaction</div>
                 </div>
             </div>
         </div>
-        <!-- Abstract Background Image -->
-        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25"
-            style="background: url('hero-bg.png') center/cover no-repeat; z-index: 0;"></div>
+
+        <a href="#about-preview"
+            class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-600 hover:text-slate-400 transition-colors">
+            <i class="bi bi-chevron-compact-down text-2xl block"></i>
+        </a>
     </section>
 
-    <!-- Services Section (Preview) -->
-    <section id="services-preview" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5 reveal">
-                <p class="text-primary text-uppercase fw-bold letter-spacing-1">Expertise</p>
-                <h2 class="display-5 fw-bold">Our Core Expertise</h2>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-md-4 reveal">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon">
-                            <i class="bi bi-display"></i>
+    <hr class="gradient-divider">
+
+    <!-- About Preview -->
+    <section id="about-preview" class="py-28">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image side -->
+                <div class="reveal-hidden reveal-left relative">
+                    <div class="img-glow-frame">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+                            alt="Creative team at Succy-Creations" class="w-full h-auto rounded-3xl object-cover"
+                            style="max-height:500px">
+                    </div>
+                    <!-- Floating badge -->
+                    <div
+                        class="float-badge glass absolute -bottom-6 -right-4 rounded-2xl px-5 py-4 flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center">
+                            <i class="bi bi-stars text-primary text-xl"></i>
                         </div>
-                        <h4 class="fw-bold mb-3">Web Design</h4>
-                        <p class="text-muted mb-0">Immersive, accessibility-first interfaces that tell your brand's
-                            story through every interaction.</p>
+                        <div>
+                            <div class="text-white font-semibold text-sm"
+                                style="font-family:'Space Grotesk',sans-serif">Award-Winning
+                            </div>
+                            <div class="text-slate-500 text-xs">Design Studio '24</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 reveal" style="transition-delay: 0.1s;">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon">
-                            <i class="bi bi-stack"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Development</h4>
-                        <p class="text-muted mb-0">High-performance tech stacks built for speed, security, and
-                            effortless scalability.</p>
+
+                <!-- Content side -->
+                <div class="reveal-hidden reveal-right">
+                    <span class="section-label mb-4 block">Who We Are</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-5"
+                        style="font-family:'Space Grotesk',sans-serif;line-height:1.15">
+                        Crafting excellence in<br><span class="gradient-text">every pixel.</span>
+                    </h2>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        At Succy-Creations, we believe great design is more than aesthetics — it's about forging
+                        meaningful
+                        connections and delivering measurable results that propel your brand forward.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="value-pill"><i class="bi bi-check text-cyan-400"></i>Human-Centric</span>
+                        <span class="value-pill"><i class="bi bi-check text-cyan-400"></i>Data-Driven</span>
+                        <span class="value-pill"><i class="bi bi-check text-cyan-400"></i>Future-Ready</span>
+                        <span class="value-pill"><i class="bi bi-check text-cyan-400"></i>Results-Focused</span>
                     </div>
+                    <a href="about.html" class="btn-glow inline-flex">
+                        Learn More About Us <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="col-md-4 reveal" style="transition-delay: 0.2s;">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon">
-                            <i class="bi bi-lightning-charge"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Strategy</h4>
-                        <p class="text-muted mb-0">Data-driven growth strategies that ensure your digital presence
-                            delivers measurable results.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center reveal">
-                <a href="services.html" class="btn btn-outline-light">Explore Full Capabilities</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section (Preview) -->
-    <section id="portfolio-preview" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5 reveal">
-                <p class="text-secondary text-uppercase fw-bold letter-spacing-1">Projects</p>
-                <h2 class="display-5 fw-bold">Selected Works</h2>
+    <hr class="gradient-divider">
+
+    <!-- Services Preview -->
+    <section id="services-preview" class="py-28" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-16 reveal-hidden">
+                <span class="section-label mb-4 block justify-center">What We Do</span>
+                <h2 class="text-4xl lg:text-5xl font-bold" style="font-family:'Space Grotesk',sans-serif">
+                    Our <span class="gradient-text">Services</span>
+                </h2>
             </div>
-            <div class="row g-4 mb-5">
-                <div class="col-lg-6 reveal">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80"
-                            alt="Modern Dashboard" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-primary mb-1 fw-bold">Enterprise</p>
-                            <h3 class="h4 fw-bold">SaaS Dashboard 2026</h3>
-                        </div>
-                    </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="service-card reveal-hidden stagger-1">
+                    <div class="service-icon mb-5"><i class="bi bi-laptop"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">Web
+                        Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5">Stunning, responsive, and user-centric
+                        websites that
+                        captivate visitors and drive real results.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-indigo-400"></i>Responsive
+                            Layouts</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-indigo-400"></i>UI/UX Strategy
+                        </li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-indigo-400"></i>Custom
+                            Animations</li>
+                    </ul>
                 </div>
-                <div class="col-lg-6 reveal" style="transition-delay: 0.1s;">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-                            alt="E-Commerce Brand" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-secondary mb-1 fw-bold">E-Commerce</p>
-                            <h3 class="h4 fw-bold">Luxe Retail Experience</h3>
-                        </div>
-                    </div>
+                <div class="service-card reveal-hidden stagger-2">
+                    <div class="service-icon mb-5"
+                        style="background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:var(--secondary)"><i
+                            class="bi bi-palette2"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">
+                        Branding</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5">Building unique brand identities that
+                        resonate deeply
+                        with your audience and leave lasting impressions.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-cyan-400"></i>Logo Design</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-cyan-400"></i>Brand Guidelines
+                        </li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-cyan-400"></i>Visual Identity
+                        </li>
+                    </ul>
+                </div>
+                <div class="service-card reveal-hidden stagger-3">
+                    <div class="service-icon mb-5"
+                        style="background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.2);color:var(--accent)"><i
+                            class="bi bi-graph-up-arrow"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">
+                        Marketing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5">Strategic growth solutions powered by data to
+                        scale
+                        your business and maximise reach effectively.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-purple-400"></i>SEO &amp;
+                            Content</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-purple-400"></i>Social Media
+                        </li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-purple-400"></i>Paid Campaigns
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center reveal">
-                <a href="portfolio.html" class="btn btn-primary">See All Projects</a>
+
+            <div class="text-center mt-12 reveal-hidden">
+                <a href="services.html" class="btn-ghost inline-flex">Explore All Services <i
+                        class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section id="contact-cta" class="section-padding text-center">
-        <div class="container reveal">
-            <div class="glass-card p-5 p-lg-10 overflow-hidden position-relative">
+    <hr class="gradient-divider">
 
-                <div class="position-relative" style="z-index: 1;">
-                    <h2 class="display-4 fw-bold mb-4">Let's build something <span
-                            class="text-gradient">extraordinary</span>.</h2>
-                    <p class="lead mb-5 text-muted mx-auto" style="max-width: 600px;">Currently accepting new projects
-                        for Q3 2026. Reach out and let's discuss your vision.</p>
-                    <a href="contact.html" class="btn btn-primary px-5 py-3">Get in Touch</a>
+    <!-- Portfolio Preview -->
+    <section id="portfolio-preview" class="py-28">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-16 reveal-hidden">
+                <span class="section-label mb-4 block justify-center">Our Work</span>
+                <h2 class="text-4xl lg:text-5xl font-bold" style="font-family:'Space Grotesk',sans-serif">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+            </div>
+
+            <!-- Bento grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                <!-- Large card -->
+                <div class="portfolio-card md:col-span-7 reveal-hidden" style="height:380px">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+                        alt="E-Commerce Brand">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Branding</span>
+                                <h4 class="text-white font-semibold text-lg"
+                                    style="font-family:'Space Grotesk',sans-serif">E-Commerce
+                                    Brand</h4>
+                                <p class="text-slate-400 text-sm">Full brand identity & web build</p>
+                            </div>
+                            <a href="portfolio.html" class="portfolio-overlay-link"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
                 </div>
+                <!-- Small top-right -->
+                <div class="portfolio-card md:col-span-5 reveal-hidden stagger-1" style="height:180px">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80"
+                        alt="Modern Dashboard">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">UI/UX</span>
+                                <h4 class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">
+                                    Modern Dashboard
+                                </h4>
+                            </div>
+                            <a href="portfolio.html" class="portfolio-overlay-link"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small bottom-right -->
+                <div class="portfolio-card md:col-span-5 reveal-hidden stagger-2" style="height:180px">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80"
+                        alt="Fintech Portal">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Web App</span>
+                                <h4 class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">
+                                    Fintech Portal</h4>
+                            </div>
+                            <a href="portfolio.html" class="portfolio-overlay-link"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom wide -->
+                <div class="portfolio-card md:col-span-7 reveal-hidden stagger-2" style="height:220px">
+                    <img src="https://images.unsplash.com/photo-1454165833767-129674992767?auto=format&fit=crop&w=900&q=80"
+                        alt="Growth Platform">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Marketing</span>
+                                <h4 class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">
+                                    Growth Platform
+                                    Campaign</h4>
+                            </div>
+                            <a href="portfolio.html" class="portfolio-overlay-link"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-ceFull Portfolio <i class=" bi bi-arrow-right"></i></a>
+                nter mt-12 reveal-hidden">
+                <a href="portfolio.html" class="btn-ghost inline-flex">View
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section py-28 reveal-hidden">
+        <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
+            <span class="section-label mb-5 block justify-center">Ready to build?</span>
+            <h2 class="text-4xl lg:text-6xl font-bold mb-6" style="font-family:'Space Grotesk',sans-serif">
+                Let's create something<br><span class="gradient-text">extraordinary.</span>
+            </h2>
+            <p class="text-slate-400 mb-10 text-lg">Your vision deserves a partner who brings both creativity and
+                strategy to
+                the table.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn-glow text-base px-10 py-4">Get Started Today</a>
+                <a href="portfolio.html" class="btn-ghost text-base px-10 py-4">See Our Work</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <a class="navbar-brand mb-3 d-inline-block" href="#">SUCCY<span>-CREATIONS</span></a>
-                    <p class="text-muted mb-0 small">&copy; 2026 Succy-Creations. Crafted for excellence.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-dribbble"></i></a>
+    <footer class="py-16 border-t border-white/5" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="nav-logo block mb-4">SUCCY<span>-CREATIONS</span></a>
+                    <p class="text-slate-500 text-sm leading-relaxed">Premium digital design studio based in Lagos,
+                        Nigeria.</p>
+                    <div class="flex gap-2 mt-5">
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-behance"></i></a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Navigation
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="footer-link">Web Design</a></li>
+                        <li><a href="services.html" class="footer-link">Branding</a></li>
+                        <li><a href="services.html" class="footer-link">Marketing</a></li>
+                        <li><a href="services.html" class="footer-link">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Contact</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-indigo-400 mt-0.5"></i>Lagos,
+                            Nigeria</li>
+                        <li class="flex items-start gap-2"><i
+                                class="bi bi-envelope text-indigo-400 mt-0.5"></i>hello@succycreations.com</li>
+                        <li class="flex items-start gap-2"><i class="bi bi-telephone text-indigo-400 mt-0.5"></i>+234
+                            800 123 4567
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gradient-divider mb-6"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-slate-600 text-sm">
+                <p>&copy; 2026 Succy-Creations. All rights reserved.</p>
+                <p>Crafted with <i class="bi bi-heart-fill text-indigo-500 text-xs"></i> &amp; precision.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 

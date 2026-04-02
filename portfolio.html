@@ -4,153 +4,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Succy-Creations Portfolio — Browse our featured projects in web design, branding, and digital marketing.">
     <title>Portfolio | Succy-Creations</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1', secondary: '#06b6d4', accent: '#a855f7',
+                        dark: { 900: '#060612', 800: '#0a0a18', 700: '#0f0f23', 600: '#141430' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark-900 text-slate-200">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SUCCY<span>-CREATIONS</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
+    <nav id="mainNav">
+        <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">SUCCY<span>-CREATIONS</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="about.html" class="nav-link-custom">About</a>
+                <a href="services.html" class="nav-link-custom">Services</a>
+                <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+                <a href="contact.html" class="btn-glow text-sm px-5 py-2.5" style="border-radius:10px">Let's Talk</a>
             </div>
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white transition-colors">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header reveal">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4">Our Work</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
-                </ol>
-            </nav>
+    <!-- Mobile menu -->
+    <div id="mobileMenu">
+        <button id="menuClose" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+            <i class="bi bi-x-lg text-2xl"></i>
+        </button>
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+        <a href="contact.html" class="btn-glow">Let's Talk</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero text-center">
+        <div class="hero-orb w-72 h-72 bg-purple-600/20" style="top:10%;left:-5%;animation-delay:0s"></div>
+        <div class="hero-orb w-56 h-56 bg-cyan-500/15" style="top:0;right:10%;animation-delay:4s"></div>
+        <div class="max-w-3xl mx-auto px-5 relative z-10">
+            <span class="section-label mb-5 block justify-center reveal-hidden">Our Work</span>
+            <h1 class="text-5xl lg:text-6xl font-bold mb-5 reveal-hidden stagger-1"
+                style="font-family:'Space Grotesk',sans-serif;line-height:1.1">
+                Creative <span class="gradient-text">Portfolio</span>
+            </h1>
+            <p class="text-slate-400 text-lg reveal-hidden stagger-2">
+                A curated showcase of projects where strategy, design, and execution come together beautifully.
+            </p>
         </div>
-    </header>
+    </section>
+
+    <hr class="gradient-divider">
 
     <!-- Portfolio Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <!-- Project 1 -->
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80"
-                            alt="Modern Dashboard" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-primary mb-1 fw-bold">Enterprise</p>
-                            <h3 class="h4 fw-bold">Financial Dashboard</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                            alt="E-Commerce Brand" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-secondary mb-1 fw-bold">Luxe Retail</p>
-                            <h3 class="h4 fw-bold">E-Commerce Identity</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s;">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1454165833767-129674992767?auto=format&fit=crop&w=800&q=80"
-                            alt="Growth Platform" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-primary mb-1 fw-bold">Marketing</p>
-                            <h3 class="h4 fw-bold">Global Data Platform</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                            alt="Analytics App" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-secondary mb-1 fw-bold">Mobile</p>
-                            <h3 class="h4 fw-bold">Aura Analytics App</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
-                            alt="Fintech Portal" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-primary mb-1 fw-bold">Web App</p>
-                            <h3 class="h4 fw-bold">Nova Fintech Portal</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s;">
-                    <div class="project-card shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80"
-                            alt="Creative Agency" class="w-100">
-                        <div class="project-overlay">
-                            <p class="text-secondary mb-1 fw-bold">Agency</p>
-                            <h3 class="h4 fw-bold">Spectral Branded Studio</h3>
-                        </div>
-                    </div>
-                </div>
+    <section class="py-28">
+        <div class="max-w-6xl mx-auto px-5">
+
+            <!-- Filter tabs -->
+            <div class="flex flex-wrap gap-3 justify-center mb-14 reveal-hidden">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="web">Web Design</button>
+                <button class="filter-tab" data-filter="branding">Branding</button>
+                <button class="filter-tab" data-filter="marketing">Marketing</button>
+                <button class="filter-tab" data-filter="ui">UI/UX</button>
             </div>
 
-            <!-- CTA -->
-            <div class="text-center reveal mt-5">
-                <p class="text-muted mb-4">Have a similar project in mind?</p>
-                <a href="contact.html" class="btn btn-primary">Let's Talk About It</a>
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="portfolioGrid">
+
+                <!-- Project 1 -->
+                <div class="portfolio-card reveal-hidden stagger-1" data-category="ui" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=700&q=80"
+                        alt="Modern Dashboard">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">UI/UX Design</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Modern Dashboard</h4>
+                                <p class="text-slate-400 text-xs mt-1">SaaS Analytics Platform · 2024</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card reveal-hidden stagger-2" data-category="branding" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80"
+                        alt="E-Commerce Brand">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Branding</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    E-Commerce Brand</h4>
+                                <p class="text-slate-400 text-xs mt-1">Full Identity System · 2023</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card reveal-hidden stagger-3" data-category="marketing" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1454165833767-129674992767?auto=format&fit=crop&w=700&q=80"
+                        alt="Growth Platform">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Marketing</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Growth Platform</h4>
+                                <p class="text-slate-400 text-xs mt-1">Campaign Strategy · 2024</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-card reveal-hidden stagger-1" data-category="ui" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80"
+                        alt="Analytics App">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">UI/UX</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Analytics App</h4>
+                                <p class="text-slate-400 text-xs mt-1">Mobile Application · 2024</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-card reveal-hidden stagger-2" data-category="web" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80"
+                        alt="Fintech Portal">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Web Design</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Fintech Portal</h4>
+                                <p class="text-slate-400 text-xs mt-1">Web Application · 2024</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-card reveal-hidden stagger-3" data-category="branding" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=700&q=80"
+                        alt="Creative Agency">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Branding</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Creative Agency</h4>
+                                <p class="text-slate-400 text-xs mt-1">Corporate Identity · 2023</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="portfolio-card reveal-hidden stagger-1" data-category="web" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=700&q=80"
+                        alt="Agency Website">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Web Design</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Agency Website</h4>
+                                <p class="text-slate-400 text-xs mt-1">Design &amp; Development · 2025</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="portfolio-card reveal-hidden stagger-2" data-category="marketing" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=700&q=80"
+                        alt="Social Campaign">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Marketing</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Social Campaign</h4>
+                                <p class="text-slate-400 text-xs mt-1">Content &amp; Ads · 2025</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="portfolio-card reveal-hidden stagger-3" data-category="web" style="height:280px">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+                        alt="Portfolio Site">
+                    <div class="portfolio-overlay">
+                        <div class="flex items-end justify-between w-full">
+                            <div>
+                                <span class="portfolio-tag mb-2 block">Web Design</span>
+                                <h4 class="text-white font-bold text-lg" style="font-family:'Space Grotesk',sans-serif">
+                                    Personal Portfolio</h4>
+                                <p class="text-slate-400 text-xs mt-1">Custom Design · 2025</p>
+                            </div>
+                            <a href="#" class="portfolio-overlay-link flex-shrink-0"><i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta-section py-24 reveal-hidden">
+        <div class="max-w-3xl mx-auto px-5 text-center relative z-10">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-5" style="font-family:'Space Grotesk',sans-serif">
+                Like what you <span class="gradient-text">see?</span>
+            </h2>
+            <p class="text-slate-400 mb-8 text-lg">Let's build your next project together, starting today.</p>
+            <a href="contact.html" class="btn-glow text-base px-10 py-4">Start Your Project <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <a class="navbar-brand mb-3 d-inline-block" href="#">SUCCY<span>-CREATIONS</span></a>
-                    <p class="text-muted mb-0 small">&copy; 2026 Succy-Creations. Crafted for excellence.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-dribbble"></i></a>
+    <footer class="py-16 border-t border-white/5" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="nav-logo block mb-4">SUCCY<span>-CREATIONS</span></a>
+                    <p class="text-slate-500 text-sm leading-relaxed">Premium digital design studio based in Lagos,
+                        Nigeria.</p>
+                    <div class="flex gap-2 mt-5">
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-behance"></i></a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="footer-link">Web Design</a></li>
+                        <li><a href="services.html" class="footer-link">Branding</a></li>
+                        <li><a href="services.html" class="footer-link">Marketing</a></li>
+                        <li><a href="services.html" class="footer-link">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Contact</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-indigo-400 mt-0.5"></i>Lagos,
+                            Nigeria</li>
+                        <li class="flex items-start gap-2"><i
+                                class="bi bi-envelope text-indigo-400 mt-0.5"></i>hello@succycreations.com</li>
+                        <li class="flex items-start gap-2"><i class="bi bi-telephone text-indigo-400 mt-0.5"></i>+234
+                            800 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gradient-divider mb-6"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-slate-600 text-sm">
+                <p>&copy; 2026 Succy-Creations. All rights reserved.</p>
+                <p>Crafted with <i class="bi bi-heart-fill text-indigo-500 text-xs"></i> &amp; precision.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 

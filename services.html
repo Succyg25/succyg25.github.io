@@ -4,203 +4,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Succy-Creations</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Icons -->
+    <meta name="description" content="Succy-Creations Services — Web Design, Branding, Digital Marketing and more.">
+    <title>Services | Succy-Creations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1', secondary: '#06b6d4', accent: '#a855f7',
+                        dark: { 900: '#060612', 800: '#0a0a18', 700: '#0f0f23', 600: '#141430' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark-900 text-slate-200">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SUCCY<span>-CREATIONS</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list text-white fs-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
+    <nav id="mainNav">
+        <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">SUCCY<span>-CREATIONS</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="about.html" class="nav-link-custom">About</a>
+                <a href="services.html" class="nav-link-custom">Services</a>
+                <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+                <a href="contact.html" class="btn-glow text-sm px-5 py-2.5" style="border-radius:10px">Let's Talk</a>
             </div>
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white transition-colors">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header reveal">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4">Our Expertise</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Services</li>
-                </ol>
-            </nav>
-        </div>
-    </header>
+    <!-- Mobile menu -->
+    <div id="mobileMenu">
+        <button id="menuClose" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+            <i class="bi bi-x-lg text-2xl"></i>
+        </button>
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="services.html" class="nav-link-custom">Services</a>
+        <a href="portfolio.html" class="nav-link-custom">Portfolio</a>
+        <a href="contact.html" class="btn-glow">Let's Talk</a>
+    </div>
 
-    <!-- Services Grid -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon mb-4">
-                            <i class="bi bi-laptop"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">UI/UX Design</h4>
-                        <p class="text-muted mb-4">High-fidelity prototypes and user-centric designs that prioritize
-                            accessibility and engagement.</p>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> User Research</li>
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Interactive Wireframes
-                            </li>
-                            <li class="small"><i class="bi bi-check2 text-primary me-2"></i> Design Systems</li>
-                        </ul>
+    <!-- Page Hero -->
+    <section class="page-hero text-center">
+        <div class="hero-orb w-72 h-72 bg-cyan-600/20" style="top:10%;left:-5%;animation-delay:0s"></div>
+        <div class="hero-orb w-56 h-56 bg-indigo-500/15" style="top:0;right:10%;animation-delay:4s"></div>
+        <div class="max-w-3xl mx-auto px-5 relative z-10">
+            <span class="section-label mb-5 block justify-center reveal-hidden">What We Offer</span>
+            <h1 class="text-5xl lg:text-6xl font-bold mb-5 reveal-hidden stagger-1"
+                style="font-family:'Space Grotesk',sans-serif;line-height:1.1">
+                Our <span class="gradient-text">Services</span>
+            </h1>
+            <p class="text-slate-400 text-lg reveal-hidden stagger-2">
+                Innovative, tailored solutions designed to solve real business challenges and drive lasting growth.
+            </p>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Main Services -->
+    <section class="py-28">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+
+                <!-- Web Design -->
+                <div class="service-card reveal-hidden stagger-1">
+                    <div class="service-icon mb-5"><i class="bi bi-laptop"></i></div>
+                    <h3 class="text-2xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">Web
+                        Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        We craft visually stunning, high-performance websites that delight users and achieve business
+                        objectives across every device and screen.
+                    </p>
+                    <ul class="space-y-2.5 text-sm text-slate-400 mb-6">
+                        <li class="flex items-center gap-2.5"><i
+                                class="bi bi-check2-circle text-indigo-400"></i>Responsive &amp; Mobile-First Layouts
+                        </li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-indigo-400"></i>UI/UX
+                            Research &amp; Strategy</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-indigo-400"></i>Custom
+                            Micro-Animations</li>
+                        <li class="flex items-center gap-2.5"><i
+                                class="bi bi-check2-circle text-indigo-400"></i>Performance Optimisation</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-indigo-400"></i>CMS
+                            Integration</li>
+                    </ul>
+                    <a href="contact.html" class="btn-ghost text-sm py-2.5 w-full justify-center">Get a Quote</a>
+                </div>
+
+                <!-- Branding -->
+                <div class="service-card reveal-hidden stagger-2">
+                    <div class="service-icon mb-5"
+                        style="background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:var(--secondary)">
+                        <i class="bi bi-palette2"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">
+                        Branding</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Build a cohesive and memorable brand identity that resonates deeply with your target audience
+                        and stands out powerfully in the market.
+                    </p>
+                    <ul class="space-y-2.5 text-sm text-slate-400 mb-6">
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-cyan-400"></i>Logo
+                            &amp; Icon Design</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-cyan-400"></i>Brand
+                            Guidelines &amp; Style Guides</li>
+                        <li class="flex items-center gap-2.5"><i
+                                class="bi bi-check2-circle text-cyan-400"></i>Typography &amp; Colour Systems</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-cyan-400"></i>Visual
+                            Storytelling</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-cyan-400"></i>Brand
+                            Audit &amp; Refresh</li>
+                    </ul>
+                    <a href="contact.html" class="btn-ghost text-sm py-2.5 w-full justify-center"
+                        style="border-color:rgba(6,182,212,.35)">Get a Quote</a>
+                </div>
+
+                <!-- Marketing -->
+                <div class="service-card reveal-hidden stagger-3">
+                    <div class="service-icon mb-5"
+                        style="background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.2);color:var(--accent)">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white" style="font-family:'Space Grotesk',sans-serif">
+                        Digital Marketing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Scale your business with data-driven marketing strategies that drive qualified traffic, deep
+                        engagement, and measurable conversions.
+                    </p>
+                    <ul class="space-y-2.5 text-sm text-slate-400 mb-6">
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-purple-400"></i>SEO
+                            &amp; Technical Audits</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-purple-400"></i>Content
+                            Strategy &amp; Copywriting</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-purple-400"></i>Social
+                            Media Management</li>
+                        <li class="flex items-center gap-2.5"><i class="bi bi-check2-circle text-purple-400"></i>Paid
+                            Ads (Google &amp; Meta)</li>
+                        <li class="flex items-center gap-2.5"><i
+                                class="bi bi-check2-circle text-purple-400"></i>Analytics &amp; Reporting</li>
+                    </ul>
+                    <a href="contact.html" class="btn-ghost text-sm py-2.5 w-full justify-center"
+                        style="border-color:rgba(168,85,247,.35)">Get a Quote</a>
+                </div>
+            </div>
+
+            <!-- Additional services row -->
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="service-card reveal-hidden stagger-1 flex gap-5 items-start">
+                    <div class="service-icon flex-shrink-0"><i class="bi bi-phone"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-white" style="font-family:'Space Grotesk',sans-serif">
+                            Mobile App Design</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Intuitive mobile-first interfaces for iOS and
+                            Android that convert users to loyal customers.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon mb-4">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Web Engineering</h4>
-                        <p class="text-muted mb-4">Scalable, secure, and blazing-fast web applications using modern
-                            frameworks and cloud tech.</p>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> React/NextJS Expert
-                            </li>
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> API Integrations</li>
-                            <li class="small"><i class="bi bi-check2 text-primary me-2"></i> E-commerce Solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s;">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon mb-4">
-                            <i class="bi bi-palette"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Branding</h4>
-                        <p class="text-muted mb-4">Comprehensive brand identities that resonate with your target
-                            audience and stay timeless.</p>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Logo Architecture</li>
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Visual Guidelines</li>
-                            <li class="small"><i class="bi bi-check2 text-primary me-2"></i> Social Media Kit</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Row 2 -->
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon mb-4">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">SEO Strategy</h4>
-                        <p class="text-muted mb-4">Technical SEO and content audits to ensure your brand reaches the top
-                            of search rankings.</p>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Keyword Analysis</li>
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Technical Audits</li>
-                            <li class="small"><i class="bi bi-check2 text-primary me-2"></i> Content Optimization</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
-                    <div class="glass-card p-5 h-100">
-                        <div class="service-icon mb-4">
-                            <i class="bi bi-phone"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">App Development</h4>
-                        <p class="text-muted mb-4">Cross-platform mobile applications that offer native performance and
-                            seamless UX.</p>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> iOS & Android</li>
-                            <li class="mb-2 small"><i class="bi bi-check2 text-primary me-2"></i> Flutter/React Native
-                            </li>
-                            <li class="small"><i class="bi bi-check2 text-primary me-2"></i> MVP Launchpad</li>
-                        </ul>
+                <div class="service-card reveal-hidden stagger-2 flex gap-5 items-start">
+                    <div class="service-icon flex-shrink-0"
+                        style="background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:var(--secondary)"><i
+                            class="bi bi-megaphone"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-white" style="font-family:'Space Grotesk',sans-serif">
+                            Social Media Design</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Scroll-stopping visual content and templates
+                            that keep your audience engaged across all platforms.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing (Added for Professionalism) -->
-    <section class="section-padding bg-surface">
-        <div class="container">
-            <div class="text-center mb-5 reveal">
-                <p class="text-secondary text-uppercase fw-bold letter-spacing-1">Packages</p>
-                <h2 class="display-5 fw-bold">Ready-to-Go Tiers</h2>
+    <hr class="gradient-divider">
+
+    <!-- Process -->
+    <section class="py-28" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-16 reveal-hidden">
+                <span class="section-label mb-4 block justify-center">How We Work</span>
+                <h2 class="text-4xl lg:text-5xl font-bold" style="font-family:'Space Grotesk',sans-serif">
+                    Our <span class="gradient-text">Process</span>
+                </h2>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 reveal">
-                    <div class="glass-card p-5 border-top border-primary border-4">
-                        <h5 class="fw-bold mb-2">Startup</h5>
-                        <h2 class="display-4 fw-bold mb-4">$2,500<small class="fs-6 text-muted">/project</small></h2>
-                        <ul class="list-unstyled mb-5 text-muted">
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> 5 Pages Site</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> Basic SEO</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> Mobile Responsive
-                            </li>
-                            <li class="mb-3 opacity-50"><i class="bi bi-x-circle text-muted me-2"></i> Advanced CMS</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-outline-light w-100">Select Plan</a>
-                    </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="process-card reveal-hidden stagger-1">
+                    <div class="process-step-number mb-4">01</div>
+                    <h4 class="text-white font-bold mb-2" style="font-family:'Space Grotesk',sans-serif">Discovery</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Deep dive into your brand, audience, and goals to
+                        shape a precise strategy.</p>
                 </div>
-                <div class="col-lg-4 reveal" style="transition-delay: 0.1s;">
-                    <div class="glass-card p-5 border-top border-secondary border-4"
-                        style="background: linear-gradient(180deg, rgba(99, 102, 241, 0.15) 0%, rgba(3, 7, 18, 0) 100%);">
-                        <h5 class="fw-bold mb-2">Enterprise</h5>
-                        <h2 class="display-4 fw-bold mb-4">$5,000+<small class="fs-6 text-muted">/project</small></h2>
-                        <ul class="list-unstyled mb-5 text-muted">
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Unlimited Pages
-                            </li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Comprehensive
-                                SEO</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Custom
-                                Integrations</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> 1 Year Support
-                            </li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary w-100">Get Quote</a>
-                    </div>
+                <div class="process-card reveal-hidden stagger-2">
+                    <div class="process-step-number mb-4">02</div>
+                    <h4 class="text-white font-bold mb-2" style="font-family:'Space Grotesk',sans-serif">Strategy</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Define the ideal approach, timeline, and
+                        deliverables for your project.</p>
+                </div>
+                <div class="process-card reveal-hidden stagger-3">
+                    <div class="process-step-number mb-4">03</div>
+                    <h4 class="text-white font-bold mb-2" style="font-family:'Space Grotesk',sans-serif">Design &amp;
+                        Build</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Execute with craft and precision, sharing progress
+                        and gathering feedback throughout.</p>
+                </div>
+                <div class="process-card reveal-hidden stagger-4">
+                    <div class="process-step-number mb-4">04</div>
+                    <h4 class="text-white font-bold mb-2" style="font-family:'Space Grotesk',sans-serif">Launch &amp;
+                        Grow</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Go live with confidence and continue optimising
+                        for long-term success.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section py-24 reveal-hidden">
+        <div class="max-w-3xl mx-auto px-5 text-center relative z-10">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-5" style="font-family:'Space Grotesk',sans-serif">
+                Ready to get <span class="gradient-text">started?</span>
+            </h2>
+            <p class="text-slate-400 mb-8 text-lg">Tell us about your project and let's make it happen.</p>
+            <a href="contact.html" class="btn-glow text-base px-10 py-4">Get a Free Quote <i
+                    class="bi bi-arrow-right"></i></a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <a class="navbar-brand mb-3 d-inline-block" href="#">SUCCY<span>-CREATIONS</span></a>
-                    <p class="text-muted mb-0 small">&copy; 2026 Succy-Creations. Crafted for excellence.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-dribbble"></i></a>
+    <footer class="py-16 border-t border-white/5" style="background:var(--dark-800)">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="nav-logo block mb-4">SUCCY<span>-CREATIONS</span></a>
+                    <p class="text-slate-500 text-sm leading-relaxed">Premium digital design studio based in Lagos,
+                        Nigeria.</p>
+                    <div class="flex gap-2 mt-5">
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-behance"></i></a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="footer-link">Web Design</a></li>
+                        <li><a href="services.html" class="footer-link">Branding</a></li>
+                        <li><a href="services.html" class="footer-link">Marketing</a></li>
+                        <li><a href="services.html" class="footer-link">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif">
+                        Contact</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-indigo-400 mt-0.5"></i>Lagos,
+                            Nigeria</li>
+                        <li class="flex items-start gap-2"><i
+                                class="bi bi-envelope text-indigo-400 mt-0.5"></i>hello@succycreations.com</li>
+                        <li class="flex items-start gap-2"><i class="bi bi-telephone text-indigo-400 mt-0.5"></i>+234
+                            800 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gradient-divider mb-6"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-slate-600 text-sm">
+                <p>&copy; 2026 Succy-Creations. All rights reserved.</p>
+                <p>Crafted with <i class="bi bi-heart-fill text-indigo-500 text-xs"></i> &amp; precision.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 
