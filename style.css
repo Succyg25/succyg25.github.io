@@ -188,22 +188,10 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 30px var(--primary-glow);
 }
 
-.btn-primary:hover {
-    background: #4f46e5;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px var(--primary-glow);
-}
-
 .btn-outline-light {
     border: 1px solid var(--border-glass);
     background: transparent;
     color: var(--text-primary);
-}
-
-.btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: white;
-    transform: translateY(-5px);
 }
 
 /* Reveal Animation Class */
@@ -336,7 +324,6 @@ footer {
 .social-icon:hover {
     background: var(--primary);
     color: white;
-    transform: translateY(-5px);
     border-color: var(--primary);
 }
 
